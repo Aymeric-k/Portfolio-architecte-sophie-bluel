@@ -172,6 +172,8 @@ nav ul {
 nav li {
   padding: 0 10px;
   font-size: 1.2em;
+  text-decoration: none;
+  color: black;
 }
 
 li:hover {
@@ -281,4 +283,64 @@ footer nav ul {
   display: flex;
   justify-content: flex-end;
   margin: 2em;
+}
+
+/* ------------------ Login page */
+.login-title {
+  font-family: 'Syne';
+  margin-top: 150px;
+}
+h2 {
+  text-align: center;
+}
+.auth-form,
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
+fieldset {
+  gap: 7px;
+}
+.auth-form {
+  gap: 30px;
+  align-items: center;
+  min-height: 55vh;
+}
+label {
+}
+.auth-form label {
+  color: #3d3d3d;
+  font-weight: 500;
+  font-family: 'Work Sans';
+}
+.auth-form fieldset input {
+  height: 51px;
+  width: 379px;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  border: none;
+}
+
+.auth-form .submit-login {
+  height: 36px;
+  margin: 0;
+}
+
+.auth-form a {
+  color: #3d3d3d;
+}
+header a {
+  text-decoration: none;
+}
+
+[aria-current='page'] {
+  font-weight: 600;
+}
+
+.red-error {
+  color: red;
+  font-weight: 500;
+}
+
+.green-login {
+  color: green;
 }

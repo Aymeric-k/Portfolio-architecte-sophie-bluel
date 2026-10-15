@@ -1,6 +1,7 @@
 const categoriesContainer = document.querySelector('.categories')
 const galleryContainer = document.querySelector('.gallery')
 let works = []
+
 async function getWorks() {
   const response = await fetch('http://localhost:5678/api/works')
   const answer = await response.json()
@@ -65,3 +66,4 @@ async function init() {
 }
 
 init()
+console.log(localStorage.getItem('token'))
