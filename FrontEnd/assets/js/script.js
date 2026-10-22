@@ -46,8 +46,9 @@ async function initCategories() {
     })
   })
 }
-initCategories()
-
+if (!localStorage.getItem('token')) {
+  initCategories()
+}
 function displayWorks(array) {
   const galleryHtml = array.map((work) => {
     return `
@@ -66,4 +67,26 @@ async function init() {
 }
 
 init()
-console.log(localStorage.getItem('token'))
+
+if (localStorage.getItem('token')) {
+  document.body.classList.add('edit-mode');
+  categoriesContainer.style.display = 'none';
+  const bandeauNoir = document.createElement('div');
+  bandeauNoir.classList.add('bandeau-noir');
+  bandeauNoir.innerHTML = `<i class="fa-regular fa-pen-to-square"></i>
+  <span>Mode édition</span>`;
+  document.body.insertBefore(bandeauNoir, document.body.firstChild);
+
+  const portfolioTitle = document.querySelector('#portfolio h2');
+  const titleWrapper = document.createElement('div');
+  titleWrapper.classList.add('portfolio-title');
+  portfolioTitle.before(titleWrapper);
+  titleWrapper.appendChild(portfolioTitle);
+
+  const editButton = document.createElement('button');
+  editButton.type = 'button';
+  editButton.classList.add('edit-button');
+  editButton.innerHTML = `<i class="fa-regular fa-pen-to-square"></i>
+  <span>modifier</span>`;
+  titleWrapper.appendChild(editButton);
+}
